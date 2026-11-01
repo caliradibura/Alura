@@ -1,6 +1,6 @@
 import os
 
-restaurantes = []
+restaurantes = ["Pizza", "Sushi"]
 
 def exibir_nome_do_programa():
     print("""
@@ -12,7 +12,7 @@ def exibir_nome_do_programa():
     ██████╔╝██║░░██║██████╦╝╚█████╔╝██║░░██║  ███████╗██╔╝╚██╗██║░░░░░██║░░██║███████╗██████╔╝██████╔╝
     ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
     """)
-
+    
 def exibir_opcoes():
     print("1. Cadastrar restaurante")
     print("2. Listar restaurantes")
@@ -42,6 +42,14 @@ def cadastrar_novo_restaurante():
     input("\nDigite uma telca para voltar ao menu principal")
     main()
 
+def listar_restaurantes():
+    os.system('cls')
+    print("Listando os reastaurantes\n")
+    for restaurante in restaurantes:
+        print(f".{restaurante}")
+    input("\nDigite uma telca para voltar ao menu principal")
+    main()
+
 def escolher_opcao():
     try:
         opcao_escolhida = int(input("\nEscolha uma opção: "))
@@ -49,7 +57,7 @@ def escolher_opcao():
         if opcao_escolhida == 1:
             cadastrar_novo_restaurante()
         elif opcao_escolhida == 2:
-            print("Listar restaurantes")
+            listar_restaurantes()
         elif opcao_escolhida == 3:
             print("Ativar restaurante")
         elif opcao_escolhida == 4:
