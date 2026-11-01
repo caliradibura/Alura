@@ -38,19 +38,25 @@ def exibir_subtitulo(texto):
 
 def cadastrar_novo_restaurante():
     exibir_subtitulo("Cadastrar novo restaurante")
+
     nome_do_restaurante = input("Digita o nome do restauramte que deseja cadastrar: ")
-    restaurantes.append(nome_do_restaurante)
+    categoria = input("Digite a categoria do restaurante: ")
+    dados_do_restaurante = {"nome" : nome_do_restaurante, "categoria" : categoria, "ativo" : False}
+
+    restaurantes.append(dados_do_restaurante)
+
     print(f"O restaurante {nome_do_restaurante} foi cadastrado com sucesso!")
+
     voltar_ao_menu()
 
 def listar_restaurantes():
     exibir_subtitulo("Listando os restaurantes")
     
     for restaurante in restaurantes:
-        nome = restaurante["nome"]
+        nome_do_restaurante = restaurante["nome"]
         categoria = restaurante["categoria"]
         ativo = restaurante["ativo"]
-        print(f"- {nome} | {categoria} | {ativo}")
+        print(f"- {nome_do_restaurante} | {categoria} | {ativo}")
 
     voltar_ao_menu()
 
